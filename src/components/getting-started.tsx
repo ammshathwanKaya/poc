@@ -51,7 +51,7 @@ const GettingStarted = ({ onGettingStart }: GettingStartedProps) => {
             8 Clubs, One Vision. This is Basketball Reimagined.
           </h1>
           <button
-            className="bg-light w-full min-h-[52px] flex items-center justify-center py-3 rounded-lg text-lg font-semibold overflow-hidden"
+            className="bg-white/10 text-white w-full min-h-[52px] flex items-center justify-center py-3 rounded-lg text-lg font-semibold overflow-hidden border-[1px]"
             onClick={mimicLoading}
           >
             <AnimatePresence mode="wait">
@@ -62,7 +62,6 @@ const GettingStarted = ({ onGettingStart }: GettingStartedProps) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -5 }}
                   transition={{ duration: 0.3 }}
-                  className="text-dark"
                 >
                   <span>AI Unrivaled</span>
                 </motion.span>
@@ -74,7 +73,7 @@ const GettingStarted = ({ onGettingStart }: GettingStartedProps) => {
                   exit={{ opacity: 0, y: 5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Loader2 className="w-5 h-5 text-dark animate-spin" />
+                  <Loader2 className="w-5 h-5 text-light animate-spin" />
                 </motion.span>
               )}
             </AnimatePresence>

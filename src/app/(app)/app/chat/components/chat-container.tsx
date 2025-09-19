@@ -163,10 +163,10 @@ export const ChatContainer = () => {
           animate={{ translateX: !speaking ? "100%" : "-100%" }}
           transition={{ type: "spring", stiffness: 50 }}
         >
-          <Spline
+          {/* <Spline
             scene="https://prod.spline.design/usPzYif8XiitaOoL/scene.splinecode"
             className="!size-[150%]"
-          />
+          /> */}
         </motion.div>
       </motion.div>
 
