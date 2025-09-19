@@ -64,7 +64,7 @@ const GettingStarted = ({ onGettingStart }: GettingStartedProps) => {
                   transition={{ duration: 0.3 }}
                   className="text-dark"
                 >
-                  Getting Started
+                  <span>AI Unrivaled</span>
                 </motion.span>
               ) : (
                 <motion.span

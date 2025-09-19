@@ -90,7 +90,7 @@ export const conversation: ChatMessage[] = [
 ];
 
 export const ChatContainer = () => {
-  const [speaking, seSpeaking] = useState(true);
+  const [speaking, seSpeaking] = useState(false);
   const [viewAvatar, setViewAvatar] = useState(false);
 
   return (
