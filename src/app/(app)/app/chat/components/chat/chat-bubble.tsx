@@ -3,11 +3,15 @@ import { ChatMessage, UserType } from "../chat-container";
 import { useMemo } from "react";
 import { Copy, ThumbsDown, ThumbsUp, User } from "lucide-react";
 import { VideoPlayer } from "./video-player";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
 
 export const ChatBubble = ({ conversation }: { conversation: ChatMessage }) => {
   const isBot = useMemo(() => {
     return conversation.userType === UserType.BOT;
   }, [conversation]);
+
   return (
     <div
       className={cn("flex  items-end gap-x-3", {
@@ -20,7 +24,7 @@ export const ChatBubble = ({ conversation }: { conversation: ChatMessage }) => {
           "rounded-br-none bg-chat-gradient": !isBot,
         })}
       >
-        {conversation?.message}
+        {conversation.message}
 
         {isBot && conversation?.video && (
           <div className="w-full mt-4">
