@@ -6,7 +6,7 @@ import { ChatBubble } from "./chat/chat-bubble";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Spline from "@splinetool/react-spline";
+import CloudyCircle from "./CloudyCircle";
 
 export enum UserType {
   USER = "USER",
@@ -90,7 +90,7 @@ export const conversation: ChatMessage[] = [
 ];
 
 export const ChatContainer = () => {
-  const [speaking, seSpeaking] = useState(false);
+  const [speaking, seSpeaking] = useState(!false);
   const [viewAvatar, setViewAvatar] = useState(false);
 
   return (
@@ -163,10 +163,9 @@ export const ChatContainer = () => {
           animate={{ translateX: !speaking ? "100%" : "-100%" }}
           transition={{ type: "spring", stiffness: 50 }}
         >
-          {/* <Spline
-            scene="https://prod.spline.design/usPzYif8XiitaOoL/scene.splinecode"
-            className="!size-[150%]"
-          /> */}
+          <div className="bg-chat-gradient size-[250px] rounded-full relative">
+            <div className="bg-inner-gradient size-full absolute top-0 leading-0 rounded-full opacity-60"></div>
+          </div>
         </motion.div>
       </motion.div>
 
