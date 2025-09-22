@@ -9,13 +9,15 @@ import {
 } from "@/components/ui/drawer";
 import { ListVideo, Menu, MessageCircleMore, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+import { cn, slideInOut } from "@/lib/utils";
+import { useTransitionRouter } from "next-view-transitions";
 
 export const SideBar = () => {
   const pathname = usePathname();
   const [isChat, setIsChat] = useState(false);
-  const router = useRouter();
+  const router = useTransitionRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (pathname === "/app/chat") {
@@ -26,11 +28,16 @@ export const SideBar = () => {
   }, [pathname]);
 
   const onclickRoute = (isVideo: boolean) => {
-    router.push(isVideo ? "/app/chat" : "/app/video-library");
+    setIsOpen(false);
+    setTimeout(() => {
+      router.push(isVideo ? "/app/chat" : "/app/video-library", {
+        onTransitionReady: slideInOut,
+      });
+    }, 500);
   };
 
   return (
-    <Drawer direction="right">
+    <Drawer direction="right" open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger>
         <Menu size={20} />
       </DrawerTrigger>
