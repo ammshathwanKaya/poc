@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mic } from "lucide-react";
+import { AudioLines, Mic } from "lucide-react";
 
 const bars = [0, 1, 2, 3, 4];
 
@@ -59,7 +59,7 @@ export const AudioWaveAnimation = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <Mic
+            <AudioLines
               className={cn(
                 "w-6 h-6 text-blue-500 stroke-1",
                 !speaking && "text-[#99a1af]"
