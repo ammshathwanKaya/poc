@@ -44,7 +44,12 @@ export const SideBar = () => {
       <DrawerContent className="w-screen max-w-screen bg-dark !border-0 text-light p-0">
         {/* 👆 makes drawer full width */}
         <DrawerHeader className="p-0">
-          <DrawerTitle className="flex items-center justify-end w-full text-light p-4 border-b-[1px] border-b-light/10 h-[64px]">
+          <DrawerTitle className="flex items-center justify-between w-full text-light p-4 border-b-[1px] border-b-light/10 h-[64px]">
+            <img
+              src="/unrivaled_wordmark.png"
+              alt="unrivaled"
+              className="h-4  top-6 left-8 "
+            />
             <DrawerClose>
               <X size={20} />
             </DrawerClose>
