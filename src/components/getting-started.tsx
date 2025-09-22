@@ -1,7 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useTransitionRouter } from "next-view-transitions";
 import React, { useState } from "react";
 import { slideInOut } from "@/lib/utils";
@@ -63,7 +62,7 @@ const GettingStarted = ({ onGettingStart }: GettingStartedProps) => {
                   exit={{ opacity: 0, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <span>AI Unrivaled</span>
+                  <span>Get Started</span>
                 </motion.span>
               ) : (
                 <motion.span
