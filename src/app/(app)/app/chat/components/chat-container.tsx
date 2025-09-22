@@ -245,7 +245,6 @@ export const ChatContainer = () => {
               height="100%"
               onEnded={addMessageOnVIdeoEnd}
               autoPlay={viewAvatar}
-              controls
             />
           </div>
         )}
