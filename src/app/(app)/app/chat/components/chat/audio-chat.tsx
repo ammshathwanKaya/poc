@@ -27,7 +27,7 @@ export const AudioChat = ({ speaking, isPlayAudio }: IAudioChat) => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.loop = true;
+    audio.loop = false;
     if (isPlayAudio) {
       audio.play().catch(console.error);
     }
