@@ -1,13 +1,14 @@
 "use client";
 import { AudioWaveAnimation } from "@/components/audio-wave-animation";
 
-import { Send, X } from "lucide-react";
+import { Menu, Send, X } from "lucide-react";
 import { ChatBubble } from "./chat/chat-bubble";
 import { ReactNode, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import ReactPlayer from "react-player";
 import { AudioChat } from "./chat/audio-chat";
+import { SideBar } from "./chat/side-bar";
 
 interface ChatFlow {
   message: string;
@@ -209,39 +210,44 @@ export const ChatContainer = () => {
         className="h-16 min-h-16 bg-white/2 flex-col border-b border-white/10"
       >
         <div className="w-full flex h-16 justify-between items-center px-4 ">
-          <img src="/unrivaled.svg" alt="unrivaled" className="h-8" />
-          <motion.button
-            className={cn(
-              "size-10 min-w-10 rounded-full bg-white/10 overflow-hidden flex items-center justify-center relative",
-              {
-                "ring-2 ring-white/30 size-8 min-w-8": viewAvatar,
-              }
-            )}
-            onClick={() => setViewAvatar(!viewAvatar)}
-          >
-            <motion.img
-              src="/avatar.png"
-              alt="unrivaled"
-              className="size-full object-cover rounded-full"
-              initial={{ scale: 1, position: "relative" }}
-              animate={{
-                scale: !viewAvatar ? 1 : 0,
-                position: !viewAvatar ? "relative" : "absolute",
-              }}
-              transition={{ duration: 0.2 }}
-            />
-
-            <motion.span
-              initial={{ scale: 0, position: "absolute" }}
-              animate={{
-                scale: !viewAvatar ? 0 : 1,
-                position: !viewAvatar ? "absolute" : "relative",
-              }}
-              transition={{ duration: 0.2 }}
+          <div className="flex items-center gap-x-3">
+            <img src="/unrivaled.svg" alt="unrivaled" className="h-8" />
+          </div>
+          <div className="flex items-center gap-x-3">
+            <motion.button
+              className={cn(
+                "size-10 min-w-10 rounded-full bg-white/10 overflow-hidden flex items-center justify-center relative",
+                {
+                  "ring-2 ring-white/30 size-8 min-w-8": viewAvatar,
+                }
+              )}
+              onClick={() => setViewAvatar(!viewAvatar)}
             >
-              <X size={16} />
-            </motion.span>
-          </motion.button>
+              <motion.img
+                src="/avatar.png"
+                alt="unrivaled"
+                className="size-full object-cover rounded-full"
+                initial={{ scale: 1, position: "relative" }}
+                animate={{
+                  scale: !viewAvatar ? 1 : 0,
+                  position: !viewAvatar ? "relative" : "absolute",
+                }}
+                transition={{ duration: 0.2 }}
+              />
+
+              <motion.span
+                initial={{ scale: 0, position: "absolute" }}
+                animate={{
+                  scale: !viewAvatar ? 0 : 1,
+                  position: !viewAvatar ? "absolute" : "relative",
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                <X size={16} />
+              </motion.span>
+            </motion.button>
+            <SideBar />
+          </div>
         </div>
         {viewAvatar && (
           <div className="overflow-hidden rounded-none flex-grow">
