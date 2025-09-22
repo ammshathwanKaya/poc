@@ -69,12 +69,10 @@ const tempChatFlow: ChatFlow[] = [
         <div className="my-3">
           <p>Chelsea Gray – 3 Dribble Exchange (Video)</p>
           <div className="w-full h-full overflow-hidden rounded-md mt-2">
-            <iframe
-              frameBorder="0"
-              scrolling="no"
-              allow="autoplay;fullscreen"
-              src="https://onelineplayer.com/player.html?autoplay=false&autopause=false&muted=false&loop=false&url=https%3A%2F%2Fwww.dropbox.com%2Fscl%2Ffi%2Fmjin0w684cwo45qbaeeu4%2Fvideo-response.mp4%3Frlkey%3Doppj82gjrkwfr2v3jtl07ypei%26st%3Dd48igey3%26raw%3D1&poster=&time=true&progressBar=true&overlay=true&muteButton=true&fullscreenButton=true&style=light&quality=auto&playButton=true"
-              className="w-full h-full"
+            <video
+              id="video"
+              src="https://www.dropbox.com/scl/fi/mjin0w684cwo45qbaeeu4/video-response.mp4?rlkey=oppj82gjrkwfr2v3jtl07ypei&amp;st=d48igey3&amp;raw=1"
+              controls
             />
           </div>
         </div>
@@ -176,15 +174,15 @@ export const ChatContainer = () => {
             ball-handling control work:
           </p>
 
-          <p>Chelsea Gray – 3 Dribble Exchange (Video)</p>
-          <div className="w-full h-full overflow-hidden rounded-md mt-2">
-            <iframe
-              frameBorder="0"
-              scrolling="no"
-              allow="autoplay;fullscreen"
-              src="https://onelineplayer.com/player.html?autoplay=false&autopause=false&muted=false&loop=false&url=https%3A%2F%2Fwww.dropbox.com%2Fscl%2Ffi%2Fmjin0w684cwo45qbaeeu4%2Fvideo-response.mp4%3Frlkey%3Doppj82gjrkwfr2v3jtl07ypei%26st%3Dd48igey3%26raw%3D1&poster=&time=true&progressBar=true&overlay=true&muteButton=true&fullscreenButton=true&style=light&quality=auto&playButton=true"
-              className="w-full h-full"
-            />
+          <div className="my-3">
+            <p>Chelsea Gray – 3 Dribble Exchange (Video)</p>
+            <div className="w-full h-full overflow-hidden rounded-md mt-2">
+              <video
+                id="video"
+                src="https://www.dropbox.com/scl/fi/mjin0w684cwo45qbaeeu4/video-response.mp4?rlkey=oppj82gjrkwfr2v3jtl07ypei&amp;st=d48igey3&amp;raw=1"
+                controls
+              />
+            </div>
           </div>
 
           <p className="mt-2">
