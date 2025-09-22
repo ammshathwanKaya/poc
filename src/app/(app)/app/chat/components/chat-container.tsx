@@ -7,10 +7,12 @@ import { ReactNode, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import ReactPlayer from "react-player";
+import { AudioChat } from "./chat/audio-chat";
 
 interface ChatFlow {
   message: string;
   response: ReactNode;
+  video?: string;
 }
 
 const tempChatFlow: ChatFlow[] = [
@@ -64,14 +66,17 @@ const tempChatFlow: ChatFlow[] = [
           ball-handling control work:
         </p>
 
-        <div className="flex items-center gap-x-2 my-3">
-          <a
-            href="https://www.dropbox.com/scl/fo/mwbiyh14n5zfj6owwpyhk/ALND6G6nnih7-yY_Bva5ubg/PLAYERS/CHELSEA%20GRAY%20-%20PASSING?e=1&preview=3+Dribble+Exchange+-+Chelsea+Gray+.mp4&rlkey=ksb2yb5smfj7xjb615gtmb9zf&subfolder_nav_tracking=1&dl=0"
-            target="_blank"
-            className="text-blue-400 underline"
-          >
-            Chelsea Gray – 3 Dribble Exchange (Video)
-          </a>
+        <div className="my-3">
+          <p>Chelsea Gray – 3 Dribble Exchange (Video)</p>
+          <div className="w-full h-full overflow-hidden rounded-md mt-2">
+            <iframe
+              frameBorder="0"
+              scrolling="no"
+              allow="autoplay;fullscreen"
+              src="https://onelineplayer.com/player.html?autoplay=false&autopause=false&muted=false&loop=false&url=https%3A%2F%2Fwww.dropbox.com%2Fscl%2Ffi%2Fmjin0w684cwo45qbaeeu4%2Fvideo-response.mp4%3Frlkey%3Doppj82gjrkwfr2v3jtl07ypei%26st%3Dd48igey3%26raw%3D1&poster=&time=true&progressBar=true&overlay=true&muteButton=true&fullscreenButton=true&style=light&quality=auto&playButton=true"
+              className="w-full h-full"
+            />
+          </div>
         </div>
 
         <p>
@@ -80,13 +85,10 @@ const tempChatFlow: ChatFlow[] = [
         </p>
       </>
     ),
+    video:
+      "https://www.dropbox.com/scl/fo/mwbiyh14n5zfj6owwpyhk/ALND6G6nnih7-yY_Bva5ubg/PLAYERS/CHELSEA%20GRAY%20-%20PASSING?raw=1",
   },
 ];
-
-interface VideoPlayerProps {
-  url: string;
-  playerName?: string;
-}
 
 export enum UserType {
   USER = "USER",
@@ -151,6 +153,7 @@ export const ChatContainer = () => {
       userName: "UnrivaledAssistant",
       message: pair ? pair.response : fallbackAnswer,
       timestamp: new Date().toISOString(),
+      video: pair?.video ?? "",
     };
 
     setTimeout(() => {
@@ -172,13 +175,18 @@ export const ChatContainer = () => {
             Great. For reference, here’s a short demo clip that shows similar
             ball-handling control work:
           </p>
-          <a
-            href="https://www.dropbox.com/scl/fo/mwbiyh14n5zfj6owwpyhk/ALND6G6nnih7-yY_Bva5ubg/PLAYERS/CHELSEA%20GRAY%20-%20PASSING?e=1&preview=3+Dribble+Exchange+-+Chelsea+Gray+.mp4&rlkey=ksb2yb5smfj7xjb615gtmb9zf&subfolder_nav_tracking=1&dl=0"
-            target="_blank"
-            className="text-blue-400 underline"
-          >
-            Chelsea Gray – 3 Dribble Exchange (Video)
-          </a>
+
+          <p>Chelsea Gray – 3 Dribble Exchange (Video)</p>
+          <div className="w-full h-full overflow-hidden rounded-md mt-2">
+            <iframe
+              frameBorder="0"
+              scrolling="no"
+              allow="autoplay;fullscreen"
+              src="https://onelineplayer.com/player.html?autoplay=false&autopause=false&muted=false&loop=false&url=https%3A%2F%2Fwww.dropbox.com%2Fscl%2Ffi%2Fmjin0w684cwo45qbaeeu4%2Fvideo-response.mp4%3Frlkey%3Doppj82gjrkwfr2v3jtl07ypei%26st%3Dd48igey3%26raw%3D1&poster=&time=true&progressBar=true&overlay=true&muteButton=true&fullscreenButton=true&style=light&quality=auto&playButton=true"
+              className="w-full h-full"
+            />
+          </div>
+
           <p className="mt-2">
             You can check out this short video that demonstrates related
             ball-handling control moves.
@@ -278,16 +286,7 @@ export const ChatContainer = () => {
           )}
         </motion.div>
 
-        <motion.div
-          className="w-full min-w-[100%]  flex items-center justify-center "
-          initial={{ translateX: "100%" }}
-          animate={{ translateX: !speaking ? "100%" : "-100%" }}
-          transition={{ type: "spring", stiffness: 50 }}
-        >
-          <div className="bg-chat-gradient size-[200px] rounded-full relative">
-            <div className="bg-inner-gradient size-full absolute top-0 leading-0 rounded-full opacity-60"></div>
-          </div>
-        </motion.div>
+        <AudioChat speaking={speaking} setConversation={setConversation} />
       </motion.div>
 
       <div className="min-h-18 mt-3 h-16 w-full p-3 flex items-start border-t-[1px] border-white/10">
