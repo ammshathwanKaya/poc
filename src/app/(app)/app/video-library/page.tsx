@@ -43,35 +43,65 @@ const videoLibrary: IVdeoLibrary[] = [
     fileSize: "248.7 MB",
     thumbnailUrl:
       "https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACzvibu9-wmS-ZKsYxZPNVj1lnOlGxWPfYI-DOR3F2c5s_Nzul9JXE0Og7jvtYk54taxilfxrOw4VDVk0VXvnRSG5WeHECEc6POnjQeWP0Q4fZNJ2phLXD0s5_duJh9pT_vi4BqFF1OMkl4NvGYgROx5Jw28AMxgn42Y93bEu4evBCffbathVbidDkpwm4upHOICY3KSz-7_0cijsCIbHXUZS7DEuzgkIZbbmcxStQv_LjwrKTKIPoPMHwT4nXhwdAwDF4B5-R5nwQssdAG5MEdQcipohpK4W_1yxiDTMYsSDw/p.jpeg?size=256x256&size_mode=2",
-    videoUrl: "",
+    videoUrl: (
+      <video
+        id={`video`}
+        src="https://www.dropbox.com/scl/fi/mjin0w684cwo45qbaeeu4/video-response.mp4?rlkey=oppj82gjrkwfr2v3jtl07ypei&amp;st=d48igey3&amp;raw=1"
+        controls
+      />
+    ),
   },
   {
     title: "Double Exchange Behind the Back Passing - Chelsea Gray .mp4",
     fileSize: "229.7 MB",
     thumbnailUrl:
       "https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACzlwulbe0B_c5UiqY7_uwdSxSpn7_PV5xp88QLzE2S-UGd-1ZpnpKkCW3TcZPjvBZlZEF4vKByOrQ8Ij4W2WV9fprNbtk6y-J-ZEtsniUpZg4aqVVCwfMWsZp0S6DGKFYNVZl1ur0GpzXN9xRDj2PG6tU_0Y0ejgFBoGIFSeq9BhpUblZQaocP_KzOuSM0Znoe9cRbktgDmPs2tRcsnUEutgiDRklfg9DxC6YiYtuqNOmJ5EJfrfDcesfnUHe-6nrWcKsCm2l3NhqkZoJryaNNcHKh0VopDP6OzOb-YfCtd4Q/p.jpeg?size=256x256&size_mode=2",
-    videoUrl: "",
+    videoUrl: (
+      <video
+        id={`video`}
+        src="https://www.dropbox.com/scl/fi/mjin0w684cwo45qbaeeu4/video-response.mp4?rlkey=oppj82gjrkwfr2v3jtl07ypei&amp;st=d48igey3&amp;raw=1"
+        controls
+      />
+    ),
   },
   {
     title: "Double Exchange Peripheral Passing - Chelsea Gray.mp4",
     fileSize: "341.9 MB",
     thumbnailUrl:
       "https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACyEqiklgYul8KCw-n8Mg_GHWnYajiEWS5doU1De0NfD7lflmnH2gHMv86AULWTCuZzabi3KEfaOLL5lYsqsJHQsnJeJHxBajkbK5fMt7FFHjqKSmuQ_3B-tdpnjGlhWLkFN2_vhOhJTlKsRp8nwCShO5wKe1gwcx1gyjIt4u_Dy2i8wybWtXJeWNTo8WrFainEGBN5Urp64QUdxzeMGHExyPpUEP6giBwRS-5zQM6ij41PhEDIKbJ5arNrYTH5TdcX1i-bY0BFhrFYjKyBFD94OZO5KwVdtujGNg2lRLLQnzQ/p.jpeg?size=256x256&size_mode=2",
-    videoUrl: "",
+    videoUrl: (
+      <video
+        id={`video`}
+        src="https://www.dropbox.com/scl/fi/mjin0w684cwo45qbaeeu4/video-response.mp4?rlkey=oppj82gjrkwfr2v3jtl07ypei&amp;st=d48igey3&amp;raw=1"
+        controls
+      />
+    ),
   },
   {
     title: "Exchange Behind the back - Chelsea Gray.mp4",
     fileSize: "341.9 MB",
     thumbnailUrl:
       "https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACwJzzbaFnWjowOOYRPt24wRypJrC1_Me2N7wByPqxngKOjO1hBOuQks2QV5dT_5WvHbOUZuAQH1lMiovy1YQWMgX-eA8RrE1vsEll1lL6vwS4-GK5J7oHTVX1ctdnbxIhjvosQ9bj9CtsMjcPVPb38czYcG2qRvSRCOqHBTg6TEtPYbApzlVOpNS46oC6aAf8xZACS5WRO41gt-ZTk9S3OluvFAw5jIXABDaVsQraRm_QB8Ft1ChTEiF20Dbkll-ZH1SzXfXFemrK6zYDjvEKfkHsHgTgSBqVUPbZxouE-w5A/p.jpeg?size=256x256&size_mode=2",
-    videoUrl: "",
+    videoUrl: (
+      <video
+        id={`video`}
+        src="https://www.dropbox.com/scl/fi/mjin0w684cwo45qbaeeu4/video-response.mp4?rlkey=oppj82gjrkwfr2v3jtl07ypei&amp;st=d48igey3&amp;raw=1"
+        controls
+      />
+    ),
   },
   {
     title: "Exchange Behind the back - Chelsea Gray.mp4",
     fileSize: "204.9 MB",
     thumbnailUrl:
       "https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACyoFmW4gxEk8-Z_PtXpcAI64qoAcxk6aokJe6tcoCG5cWsYdyru1GMSe-aWwJldxw9p7OLwwtKkOMMntcjfpYm1Ihoxg7w0_cXves6cgzDgHga0SROAbUKQxFskRht4Qypsy1g2j6vzzy93uKQa0GOBgct7aOQWFcNE3tteFSmxm0Xn13MlisqTqQYzkLCrwdX8Yb5F5r1Tb4x1cEsiW4phfpLZjP3zcBsQXCBk4G1bD5SlNth8d7rXeTP4D7prSse-V5f7VDos7xItt69OwxjvJ0vOwEACC8if8c3IEAV8GQ/p.jpeg?size=256x256&size_mode=2",
-    videoUrl: "",
+    videoUrl: (
+      <video
+        id={`video`}
+        src="https://www.dropbox.com/scl/fi/mjin0w684cwo45qbaeeu4/video-response.mp4?rlkey=oppj82gjrkwfr2v3jtl07ypei&amp;st=d48igey3&amp;raw=1"
+        controls
+      />
+    ),
   },
 ];
 
