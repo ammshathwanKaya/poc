@@ -204,7 +204,7 @@ export const ChatContainer = () => {
     <div className="h-dvh flex flex-col w-full overflow-hidden">
       <motion.div
         initial={{ height: 64 }}
-        animate={{ height: viewAvatar ? 900 : 64 }}
+        animate={{ height: viewAvatar ? 300 : 64 }}
         transition={{ type: "spring", stiffness: 50 }}
         className="h-16 min-h-16 bg-white/2 flex-col border-b border-white/10"
       >
@@ -256,7 +256,7 @@ export const ChatContainer = () => {
         )}
       </motion.div>
 
-      <motion.div className="flex-grow overflow-auto min-h-[50vh] flex overflow-x-hidden bg-dark">
+      <motion.div className="flex-grow overflow-auto  flex overflow-x-hidden bg-dark">
         <motion.div
           className="w-full min-w-[100%] flex flex-col gap-y-6 p-4"
           initial={{ translateX: "0" }}
@@ -284,7 +284,13 @@ export const ChatContainer = () => {
           )}
         </motion.div>
 
-        <AudioChat speaking={speaking} setConversation={setConversation} />
+        {speaking && (
+          <AudioChat
+            speaking={speaking}
+            setConversation={setConversation}
+            isPlayAudio={!viewAvatar}
+          />
+        )}
       </motion.div>
 
       <div className="min-h-18 mt-3 h-16 w-full p-3 flex items-start border-t-[1px] border-white/10">
